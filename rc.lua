@@ -493,10 +493,23 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
+   -- Set Lxterminal  to always map on the tag named "1" on screen 1.
+   { rule = { class = "Lxterminal" },
+   	 properties = { screen = 1, tag = "1" } },
+   	  
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
-}
+   { rule = { class = "firefox" },
+     properties = { screen = 1, tag = "2" } },
+     
+   -- Set Thunderbird  to always map on the tag named "4" on screen 1.
+   { rule = { class = "Thunderbird" },
+   	 properties = { screen = 1, tag = "4" } },
+   
+   -- Set PCmanfm  to always map on the tag named "5" on screen 1.
+   { rule = { class = "Pcmanfm" },
+   	 properties = { screen = 1, tag = "5" } },
+   	  
+   }
 -- }}}
 
 -- {{{ Signals
