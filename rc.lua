@@ -515,7 +515,14 @@ awful.rules.rules = {
    -- Set PCmanfm  to always map on the tag named "5" on screen 1.
    { rule = { class = "Pcmanfm" },
    	 properties = { screen = 1, tag = "5" } },
-   	  
+
+   -- Set Clementine to always map on the tag named "7" on screen 1.    	  
+   { rule = { class = "Clementine" },
+	 properties = { screen = 1, tag = "7" } } ,
+
+   -- Set Lutris to always map on the tag named "3" on screen 1.
+   { rule = { class = "Lutris" },
+	properties = { screen = 1, tag = "3" } }
    }
 -- }}}
 
