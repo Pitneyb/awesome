@@ -175,8 +175,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
-    -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+-- Each screen has its own tag table.
+	local names = { "main", "web", "Games", "email", "office", "im", "Music", "8", "9" }
+	local l = awful.layout.suit  -- Just to save some typing: use an alias.
+	local layouts = { l.tile, l.max, l.max, l.max, l.max,
+    l.floating, l.tile.left, l.floating, l.floating }
+	awful.tag(names, s, layouts)
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -504,25 +508,25 @@ awful.rules.rules = {
    { rule = { class = "Lxterminal" },
    	 properties = { screen = 1, tag = "1" } },
    	  
-    -- Set Firefox to always map on the tag named "2" on screen 1.
+    -- Set Firefox to always map on the tag named "web" on screen 1.
    { rule = { class = "firefox" },
-     properties = { screen = 1, tag = "2" } },
+     properties = { screen = 1, tag = "web" } },
      
-   -- Set Thunderbird  to always map on the tag named "4" on screen 1.
+   -- Set Thunderbird  to always map on the tag named "email" on screen 1.
    { rule = { class = "Thunderbird" },
-   	 properties = { screen = 1, tag = "4" } },
+   	 properties = { screen = 1, tag = "email" } },
    
    -- Set PCmanfm  to always map on the tag named "5" on screen 1.
    { rule = { class = "Pcmanfm" },
    	 properties = { screen = 1, tag = "5" } },
 
-   -- Set Clementine to always map on the tag named "7" on screen 1.    	  
+   -- Set Clementine to always map on the tag named "Music" on screen 1.    	  
    { rule = { class = "Clementine" },
-	 properties = { screen = 1, tag = "7" } } ,
+	 properties = { screen = 1, tag = "Music" } } ,
 
-   -- Set Lutris to always map on the tag named "3" on screen 1.
+   -- Set Lutris to always map on the tag named "Games" on screen 1.
    { rule = { class = "Lutris" },
-	properties = { screen = 1, tag = "3" } }
+	properties = { screen = 1, tag = "Games" } }
    }
 -- }}}
 
