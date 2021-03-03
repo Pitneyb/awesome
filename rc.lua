@@ -176,9 +176,9 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
 -- Each screen has its own tag table.
-	local names = { "main", "web", "Games", "email", "office", "im", "Music", "8", "9" }
+	local names = { "main", "web", "Games", "email", "fm", "office", "Music", "8", "9" }
 	local l = awful.layout.suit  -- Just to save some typing: use an alias.
-	local layouts = { l.tile, l.max, l.max, l.max, l.max,
+	local layouts = { l.tile, l.max, l.max, l.max, l.floating,
     l.floating, l.tile.left, l.floating, l.floating }
 	awful.tag(names, s, layouts)
 
@@ -506,27 +506,35 @@ awful.rules.rules = {
 
    -- Set Lxterminal  to always map on the tag named "1" on screen 1.
    { rule = { class = "Lxterminal" },
-   	 properties = { screen = 1, tag = "1" } },
+   	 properties = { tag = screen[1].tags[1] } },
    	  
     -- Set Firefox to always map on the tag named "web" on screen 1.
    { rule = { class = "firefox" },
-     properties = { screen = 1, tag = "web" } },
+     properties = { tag = screen[1].tags[2] } },
      
    -- Set Thunderbird  to always map on the tag named "email" on screen 1.
    { rule = { class = "Thunderbird" },
-   	 properties = { screen = 1, tag = "email" } },
+   	 properties = { tag = screen[1].tags[4] } },
    
    -- Set PCmanfm  to always map on the tag named "5" on screen 1.
    { rule = { class = "Pcmanfm" },
-   	 properties = { screen = 1, tag = "5" } },
+   	 properties = { tag = screen[1].tags[5] } },
 
    -- Set Clementine to always map on the tag named "Music" on screen 1.    	  
    { rule = { class = "Clementine" },
-	 properties = { screen = 1, tag = "Music" } } ,
+	 properties = { tag = screen[1].tags[7] } } ,
 
    -- Set Lutris to always map on the tag named "Games" on screen 1.
    { rule = { class = "Lutris" },
-	properties = { screen = 1, tag = "Games" } }
+	properties = {  tag = screen[1].tags[3] } },
+
+   -- Set Steam to always map on the tag named "Games" on screen 1.
+   { rule = { class = "Steam" },
+	properties = { tag = screen[1].tags[3] } },
+
+   -- Set Libreoffice to always map on the tag named "office" on screen 1.
+   { rule = { class = "libreoffice" },
+	properties = { tag = screen[1].tags[6] } }
    }
 -- }}}
 
