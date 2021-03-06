@@ -16,6 +16,6 @@ return {
     'konsole',			 -- Default Terminal
     'clementine --log-level 0',	 -- run Music player with reduced logging
     'volumeicon',		 -- volume control in sys-tray
-    'nm-applet'			 -- Network sys-tray
+    'nm-applet --indicator'	 -- Network sys-tray
   }
 }
