@@ -11,6 +11,7 @@ return {
   run_on_start_up = {
     'lxpolkit', 	 -- credential manager
     'picom -b --config ~/picom.conf',	 --
+    'keepassxc'			 -- Password Manager
     'firefox',			 -- Default Browser
     'thunderbird',		 -- Email program
     'konsole',			 -- Default Terminal
