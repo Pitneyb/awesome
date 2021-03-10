@@ -533,8 +533,12 @@ awful.rules.rules = {
 	properties = { tag = screen[1].tags[3] } },
 
    -- Set Libreoffice to always map on the tag named "office" on screen 1.
-   { rule = { class = "libreoffice" },
-	properties = { tag = screen[1].tags[6] } }
+   { rule_any = { class = "libreoffice" },
+	properties = { tag = screen[1].tags[6] } },
+
+   -- Set keepassxc to always map on the tag named "web" on screen 1.
+   { rule = { class = "KeePassXC" },
+	properties = { tag = screen[1].tags[2] } }
    }
 -- }}}
 
